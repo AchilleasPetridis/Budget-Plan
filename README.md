@@ -45,11 +45,11 @@
 
 # Live Demo 
 
-[Live Demo](
+[Live Demo](https://achilleaspetridis.github.io/Budget-Plan/)
 
 # GitHub Repository
 
-
+[GitHub Repository](https://github.com/AchilleasPetridis/Budget-Plan)
 
 # Σημείωση
 
