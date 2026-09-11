@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="el">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="stylesheet" href="budget-plan.css">
+        <title>Budget Plan</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div>
+                <h1 id="main-title">Budget Plan</h1>
+            </div>
+        </header>
+
+        
+
+        <main id="main-container">
+            
+            <h2>Φτιάξε το δικό σου πλάνο εύκολα και γρήγορα</h2>
+
+            <form id="budget-form">
+                
+                    <p>Επίλεξε το πλάνο σου</p>
+                    <div class="home-page-container">
+                        <section class="plan">
+                            <p>Επιλέγοντας αυτό το πλάνο διαλέγετε το έτος όπου επιθυμείτε να ξεκινήσετε</p>
+                            <dialog class="modal" id="year-modal">
+                                <button type="button" id="close-year-modal" class="close-modal-btn">X</button>
+                                <div class="budget-input-group">
+                                    <label for="starting-year">
+                                        Το έτος που επιθυμώ να ξεκινήσω είναι
+                                    </label>
+
+                                    <input 
+                                        type="number"
+                                        name="starting-year"
+                                        id="starting-year"
+                                        class="starting-year"
+                                        placeholder = "π.χ. 2026"
+                                        required
+                                    >
+
+                                    <span></span>
+
+                                    <label for="starting-amount-year">
+                                        Το χρηματικό μου budget είναι
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        name="budget-amount"
+                                        id="starting-amount-year"
+                                        class="starting-amount"
+                                        required
+                                    >
+                                    <span class="currency-symbol" aria-hidden="true">€</span>
+                                </div>
+                                <button type="button" id="continue-year-btn" class="continue-btn">Συνέχεια</button>
+                            </dialog>
+                            <button type="button" id="yearly-plan-btn" class="year choose-plan">
+                                Ετήσιο Πλάνο
+                            </button>
+                        </section>
+                        
+                        <section class="plan">
+                            <p>Επιλέγοντας αυτό το πλάνο διαλέγετε τον μήνα όπου επιθυμείτε να ξεκινήσετε</p>
+                            <dialog class="modal" id="month-modal">
+                                <button type="button" id="close-month-modal" class="close-modal-btn">X</button>
+                                <div class="budget-input-group">
+                                    <label for="starting-month">
+                                        Ο μήνας που επιθυμώ να ξεκινήσω είναι
+                                    </label>
+
+                                    <input 
+                                        type="number"
+                                        name="starting-month"
+                                        id="starting-month"
+                                        class="starting-month"
+                                        placeholder = "π.χ. 6"
+                                        required
+                                    >
+
+                                    <span></span>
+
+                                    <label for="starting-amount-month">
+                                        Το χρηματικό μου budget είναι
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        name="budget-amount"
+                                        id="starting-amount-month"
+                                        class="starting-amount"
+                                        required
+                                    >
+                                    <span class="currency-symbol" aria-hidden="true">€</span>
+                                </div>
+                                <button type="button" id="continue-month-btn" class="continue-btn">Συνέχεια</button>
+                            </dialog>
+                            <button type="button" id="monthly-plan-btn" class="month choose-plan">
+                                Μηνιαίο Πλάνο
+                            </button>
+                        </section>
+                        
+                        <section class="plan">
+                            <p>Επιλέγοντας αυτό το πλάνο διαλέγετε την ημερομηνία που επιθειμείτε να ξεκινήσετε
+                                <br>
+                                <span>Μπορείτε να επιλέξετε και την τελική ημερομηνία</span>
+                            </p>
+                            <dialog class="modal" id="day-modal">
+                                <button type="button" id="close-day-modal" class="close-modal-btn">X</button>
+                                <div class="budget-input-group">
+                                    <label for="starting-day">
+                                        Η ημερομηνία που επιθυμώ να ξεκινήσω είναι
+                                    </label>
+
+                                    <input 
+                                        type="date"
+                                        name="starting-day"
+                                        id="starting-day"
+                                        class="starting-day"
+                                        required
+                                    >
+
+                                    <span></span>
+
+                                    <label for="starting-amount-day">
+                                        Το χρηματικό μου budget είναι
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        name="budget-amount"
+                                        id="starting-amount-day"
+                                        class="starting-amount"
+                                        required
+                                    >
+                                    <span class="currency-symbol" aria-hidden="true">€</span>
+                                </div>
+                                <button type="button" id="continue-day-btn" class="continue-btn">Συνέχεια</button>
+                            </dialog>
+                            <button type="button" id="choose-days-btn" class="days choose-plan">
+                                Επιλογή Ημερών
+                            </button>
+                        </section>
+                        
+                    </div>
+                
+            </form>
+        </main>
+
+        <footer class="plan-footer" hidden>
+                <article class="summary">
+                    <p>Σύνολο Εξόδων:</p>
+                    <p><span id="total-expenses">0</span> €</p>
+                </article>
+                <article class="summary">
+                    <p>Υπόλοιπο:</p>
+                    <p><span id="remaining-budget"></span> €</p>
+                </article>
+        </footer>
+
+        <script src="budget-plan.js"></script>
+        
+    </body>
